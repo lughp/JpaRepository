@@ -12,4 +12,6 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     Page<User> findByNameContainingIgnoreCase(String name, Pageable pageable);
 
+    // https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods
+
 }
