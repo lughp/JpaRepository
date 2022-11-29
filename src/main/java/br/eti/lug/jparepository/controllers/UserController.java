@@ -44,7 +44,7 @@ public class UserController {
 
     @GetMapping(value = "/search-name")
     public ResponseEntity<Page<User>> searchByName(@RequestParam(defaultValue = "") String name, Pageable pageable) {
-        Page<User> result = repository.searchByName(name, pageable);
+        Page<User> result = repository.findByNameContainingIgnoreCase(name, pageable);
         return ResponseEntity.ok(result);
     }
     // http://localhost:8080/users/search-name?name=maria
